@@ -4,7 +4,7 @@ class Greeter
     @who = who
   end
   def greet
-    if @who == "Pete"
+    if @who =~ /^\s*PETE\s*$/i
       puts "Hello dear author"
     else
       puts "Hello #{@who}"
@@ -12,7 +12,7 @@ class Greeter
   end
 end
 
-greeter = Greeter.new "dear reader"
+greeter = Greeter.new "reader"
 greeter.greet
 
-Greeter.new( "Pete" ).greet
+Greeter.new( " Pete " ).greet
