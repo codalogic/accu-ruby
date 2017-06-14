@@ -3,12 +3,17 @@ class Greeter
   def initialize( who )
     @who = who
   end
+
   def greet
     if @who =~ /^\s*PETE\s*$/i
-      puts "Hello dear author"
+      puts "Hello author"
     else
-      puts "Hello #{@who}"
+      named_greeting
     end
+  end
+
+  private def named_greeting
+    puts "Hello #{@who}"
   end
 end
 
