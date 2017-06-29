@@ -1,0 +1,17 @@
+# Simple parallel assignment
+    Before swap - x: X, y: Y
+    After swap - x: Y, y: X
+# Simple array assignment
+    x.class in x = [ 1, 2, 3 ] -> <class 'list'>
+# 'Auto' array assignment
+    x.class in x = 1, 2, 3 -> <class 'tuple'>
+# This line...
+    y.class in x, y = 1, [ 2, 3 ] -> <class 'list'> [2, 3]
+# ... and this line are equivalent
+    y.class in x, y = [ 1, [ 2, 3 ] ] -> <class 'list'> [2, 3]
+# Brackets can be used to expand nested arrays
+    y.class in x, (y, z) = 1, [ 2, 3 ] -> <class 'int'> 2
+    z.class in x, (y, z) = 1, [ 2, 3 ] -> <class 'int'> 3
+# Introducing the 'splat' operator '*'
+# How to get the remainder of an array in a variable
+    y.class in x, *y = [ 1, 2, 3 ] -> <class 'list'> [2, 3]
